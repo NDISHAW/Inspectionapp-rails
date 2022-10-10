@@ -90,5 +90,5 @@ test:
 production:
   <<: *default
   database: inspection_production
-  username: ndishaw
-  password: ndishaw
+  username: inspection
+  password: <%= ENV["inspection_DATABASE_PASSWORD"] %>
