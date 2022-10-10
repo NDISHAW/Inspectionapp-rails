@@ -4,7 +4,7 @@ function signIn() {
     // firebase code
     // firebase.auth().signInWithEmailAndPassword(email, password)
     axios
-      .post("https://inspectionsapp-rails.herokuapp.com/api/login", {
+      .post("https://inspectionsapp-rails.herokuapp.com//api/login", {
         password: password,
         username: username,
         // phone: phone,

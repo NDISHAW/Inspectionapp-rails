@@ -4,7 +4,7 @@ function signIn() {
     // firebase code
     // firebase.auth().signInWithEmailAndPassword(email, password)
     axios
-      .post("https://inspectionsapp-rails.herokuapp.com/api/login", {
+      .post("seventy@gmail.com/api/login", {
         password: password,
         username: username,
         // phone: phone,
@@ -29,7 +29,7 @@ function signUp() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;const phone = document.getElementById("phone").value;const licence_no = document.getElementById("licence_no").value;const address = document.getElementById("address").value;
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/signup", {
+    .post("http://localhost:3000/api/signup", {
       username: username,
       password: password,
       phone: phone,
@@ -61,7 +61,7 @@ function Booking(event) {
   // const btn = document.getElementById("submit-btn").value;
 
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/bookings", {
+    .post("http://localhost:3000/api/bookings", {
       service: service,
       date: date,
       time: time,
@@ -92,7 +92,7 @@ function vehicles(){
   // const btn = document.getElementById("submit-btn").value;
 
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/vehicles", {
+    .post("http://localhost:3000/api/vehicles", {
       numberplate: numberplate,
       chasisnumber: chasisnumber,
       model: model,

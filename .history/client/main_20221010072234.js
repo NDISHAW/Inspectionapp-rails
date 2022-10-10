@@ -4,24 +4,24 @@ function signIn() {
     // firebase code
     // firebase.auth().signInWithEmailAndPassword(email, password)
     axios
-      .post("https://inspectionsapp-rails.herokuapp.com/api/login", {
-        password: password,
-        username: username,
-        // phone: phone,
-        // licence_no: licence_no,
-        // address: address,
-      })
-      .then((result) => {
-        let res = result.data;
-        localStorage.setItem("user_id", res.user_id);
-        window.location = "dashboard.html";
+        .post("seventy@gmail.com/api/login", {
+            password: password,
+            username: username,
+            // phone: phone,
+            // licence_no: licence_no,
+            // address: address,
+        })
+        .then((result) => {
+          let res = result.data;
+          localStorage.setItem("user_id", res.user_id);
+            window.location = "dashboard.html";
 
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error.code);
-        console.log(error.message);
-      });
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error.code);
+            console.log(error.message);
+        });
 }
 
 function signUp() {
@@ -29,7 +29,7 @@ function signUp() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;const phone = document.getElementById("phone").value;const licence_no = document.getElementById("licence_no").value;const address = document.getElementById("address").value;
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/signup", {
+    .post("http://localhost:3000/api/signup", {
       username: username,
       password: password,
       phone: phone,
@@ -61,7 +61,7 @@ function Booking(event) {
   // const btn = document.getElementById("submit-btn").value;
 
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/bookings", {
+    .post("http://localhost:3000/api/bookings", {
       service: service,
       date: date,
       time: time,
@@ -92,7 +92,7 @@ function vehicles(){
   // const btn = document.getElementById("submit-btn").value;
 
   axios
-    .post("https://inspectionsapp-rails.herokuapp.com/api/vehicles", {
+    .post("http://localhost:3000/api/vehicles", {
       numberplate: numberplate,
       chasisnumber: chasisnumber,
       model: model,
