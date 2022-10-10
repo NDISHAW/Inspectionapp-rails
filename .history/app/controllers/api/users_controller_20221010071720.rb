@@ -35,8 +35,8 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        user = User.all
-        render json: user
+        user = user.all
+        render
     end
 
     private 

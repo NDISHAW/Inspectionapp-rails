@@ -35,8 +35,9 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        user = User.all
-        render json: user
+        user = user.all(id: session[:user_id])
+        booking = user.bookings.create!(booking_params)
+        render json: booking, status: :created
     end
 
     private 

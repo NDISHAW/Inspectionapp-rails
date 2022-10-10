@@ -34,10 +34,11 @@ class Api::UsersController < ApplicationController
         
     end
 
-    def index
-        user = User.all
-        render json: user
-    end
+    # def index
+    #     user = user.find_by(id: session[:user_id])
+    #     booking = user.bookings.create!(booking_params)
+    #     render json: booking, status: :created
+    # end
 
     private 
     def user_params
