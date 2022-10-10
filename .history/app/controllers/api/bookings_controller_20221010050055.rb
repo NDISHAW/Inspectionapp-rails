@@ -13,7 +13,7 @@ class Api::BookingsController < ApplicationController
         # booking = User.first.bookings.create!(booking_params)
         # booking = Booking.create!(booking_params)
         # byebug
-        # render  status: :created
+        render  status: :created
     end 
 
     def update 

@@ -1,19 +1,19 @@
 class Api::BookingsController < ApplicationController
-    # before_action :authorize
+    before_action :authorize
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
     def index
-       bookings = Booking.where(status: true)
+       bookings = @current_user.bookings.where(status: true)
        render json: bookings    
     end 
 
     def create        
-        booking = Booking.create(booking_params)
+        booking = @current_user.bookings.create!(booking_params)
         # booking = User.first.bookings.create!(booking_params)
         # booking = Booking.create!(booking_params)
         # byebug
-        # render  status: :created
+        render json: booking, status: :created
     end 
 
     def update 
@@ -30,7 +30,7 @@ class Api::BookingsController < ApplicationController
 
     private
     def booking_params 
-        params.permit(:user_id, :service, :date, :time)
+        params.permit(:service, :date, :time)
     end
 
 

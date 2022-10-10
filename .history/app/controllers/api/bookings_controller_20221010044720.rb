@@ -4,7 +4,7 @@ class Api::BookingsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
     def index
-       bookings = Booking.where(status: true)
+       bookings = @current_user.bookings.where(status: true)
        render json: bookings    
     end 
 
@@ -13,7 +13,7 @@ class Api::BookingsController < ApplicationController
         # booking = User.first.bookings.create!(booking_params)
         # booking = Booking.create!(booking_params)
         # byebug
-        # render  status: :created
+        render json: booking, status: :created
     end 
 
     def update 

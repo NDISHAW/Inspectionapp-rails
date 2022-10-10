@@ -12,7 +12,7 @@ class Api::VehiclesController < ApplicationController
 
     def create     
         # user = User.find_by(id: session[:user_id])   
-        vehicle =Vehicle.create!(vehicles_params)
+        vehicle = user.vehicles.create!(vehicles_params)
         # review = @current_user.reviews.create!(review_params)
         # booking = User.first.bookings.create!(booking_params)
         # booking = Booking.create!(booking_params)
